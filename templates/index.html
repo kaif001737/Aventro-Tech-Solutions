@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventro Tech Solutions - Transforming Ideas into Intelligent Systems</title>
+  <meta name="description" content="Aventro Tech Solutions - Innovation-driven technology startup focused on AI, Agent-Based Systems, and modern software technologies.">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #6366f1;
+      --secondary-color: #8b5cf6;
+      --accent-color: #06b6d4;
+      --dark-bg: #0a0e27;
+      --dark-card: #151932;
+      --text-light: #e2e8f0;
+      --text-muted: #94a3b8;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+    }
+
+    .navbar-brand {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 120px 20px 80px;
+      background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 2rem;
+      border-radius: 20px;
+      background: var(--gradient-1);
+      padding: 15px;
+      box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+      border: 3px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    /* Navbar Logo */
+    .navbar-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: var(--gradient-1);
+      padding: 5px;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .navbar-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .navbar-brand {
+      display: flex !important;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(99, 102, 241, 0.6), 0 0 90px rgba(99, 102, 241, 0.4);
+      animation: fadeInUp 1s ease, glow-pulse 3s ease-in-out infinite;
+      letter-spacing: 2px;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(99, 102, 241, 0.6), 0 0 90px rgba(99, 102, 241, 0.4);
+      }
+      50% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(99, 102, 241, 0.8), 0 0 120px rgba(99, 102, 241, 0.6);
+      }
+    }
+
+    .hero .subtitle {
+      font-size: 1.5rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease 0.2s both;
+      text-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 50px rgba(6, 182, 212, 0.6);
+      letter-spacing: 1px;
+    }
+
+    .hero-logo {
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 40px rgba(99, 102, 241, 0.4));
+    }
+
+    .hero .lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-hero {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .btn-primary-custom {
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+    }
+
+    .btn-outline-custom {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-outline-custom:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .section-title.services h2,
+    .section-title.programs h2 {
+      color: #000000;
+      text-shadow: none;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 30px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-title.services p,
+    .section-title.programs p {
+      color: #000000;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .service-card, .program-card, .research-card {
+      background: var(--dark-card);
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before, .program-card::before, .research-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-1);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before, .program-card:hover::before, .research-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover, .program-card:hover, .research-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary-color);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-1);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+
+    .service-card h5, .program-card h5, .research-card h5 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .service-card p, .program-card p, .research-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+      border-radius: 30px;
+      padding: 4rem 2rem;
+      margin: 4rem 0;
+      border: 2px solid rgba(99, 102, 241, 0.3);
+      box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 40px rgba(99, 102, 241, 0.6), 0 0 60px rgba(99, 102, 241, 0.4);
+      margin-bottom: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.2;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 40px rgba(99, 102, 241, 0.6), 0 0 60px rgba(99, 102, 241, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 30px rgba(99, 102, 241, 1), 0 0 60px rgba(99, 102, 241, 0.8), 0 0 90px rgba(99, 102, 241, 0.6);
+        transform: scale(1.05);
+      }
+    }
+
+    .stat-number.animate {
+      animation: countUp 2s ease-out, pulse-glow 2s ease-in-out infinite 2s;
+    }
+
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-item:hover .stat-number {
+      animation: pulse-glow 1s ease-in-out infinite;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      color: #ffffff;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+      letter-spacing: 1px;
+    }
+
+    /* About Section */
+    .about-content {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .about-highlight {
+      background: var(--dark-card);
+      padding: 2rem;
+      border-radius: 15px;
+      border-left: 4px solid var(--primary-color);
+      margin: 2rem 0;
+    }
+
+    /* Research Section */
+    .research-section {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border-radius: 30px;
+      padding: 4rem 2rem;
+    }
+
+    .research-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .research-feature-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: var(--gradient-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--dark-card);
+      border-radius: 30px;
+      padding: 4rem 2rem;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-control-custom {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 10px;
+      padding: 15px 20px;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control-custom:focus {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+      outline: none;
+      color: var(--text-light);
+    }
+
+    .form-control-custom::placeholder {
+      color: var(--text-muted);
+    }
+
+    select.form-control-custom {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 10px;
+      padding: 15px 20px;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    select.form-control-custom:focus {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+      outline: none;
+      color: var(--text-light);
+    }
+
+    select.form-control-custom option {
+      background: var(--dark-card);
+      color: var(--text-light);
+    }
+
+    .contact-reason {
+      background: var(--dark-card);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .contact-reason h5 {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .contact-reason p {
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark-card);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h5 {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .footer-section p, .footer-section a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a:hover {
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: var(--dark-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 1.8rem;
+      transition: all 0.4s ease;
+      border: 2px solid rgba(99, 102, 241, 0.3);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      transition: left 0.4s ease;
+      z-index: -1;
+    }
+
+    .social-link.linkedin::before {
+      background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+    }
+
+    .social-link.twitter::before {
+      background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%);
+    }
+
+    .social-link.instagram::before {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+
+    .social-link:hover::before {
+      left: 0;
+    }
+
+    .social-link:hover {
+      transform: translateY(-8px) scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+      color: white;
+      border-color: transparent;
+    }
+
+    .social-link.linkedin:hover {
+      box-shadow: 0 15px 40px rgba(0, 119, 181, 0.6);
+    }
+
+    .social-link.twitter:hover {
+      box-shadow: 0 15px 40px rgba(29, 161, 242, 0.6);
+    }
+
+    .social-link.instagram:hover {
+      box-shadow: 0 15px 40px rgba(188, 24, 136, 0.6);
+    }
+
+    /* Footer Social Icons - Separate Style */
+    .footer-social-container {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .footer-social-item {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-link svg {
+      width: 1.2em;
+      height: 1.2em;
+      fill: currentColor;
+    }
+
+    .email-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .email-link:hover {
+      color: var(--accent-color);
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(99, 102, 241, 0.2);
+      color: var(--text-muted);
+    }
+
+    /* Scroll Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Background Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float-particle 20s infinite;
+    }
+
+    @keyframes float-particle {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Gradient Text Animation */
+    .gradient-text {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-shift 3s ease infinite;
+      background-size: 200% 200%;
+    }
+
+    @keyframes gradient-shift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* Additional Tech Enhancements */
+    .tech-glow {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 40px rgba(99, 102, 241, 0.2);
+    }
+
+    .tech-border {
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      position: relative;
+    }
+
+    .tech-border::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: var(--gradient-1);
+      border-radius: inherit;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+
+    .tech-border:hover::after {
+      opacity: 0.3;
+    }
+
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(99, 102, 241, 0.2);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Enhanced Card Hover Effects */
+    .service-card, .program-card, .research-card {
+      position: relative;
+    }
+
+    .service-card::after, .program-card::after, .research-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    .service-card:hover::after, .program-card:hover::after, .research-card:hover::after {
+      opacity: 1;
+    }
+
+    /* Success Message */
+    .success-message {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      background: var(--dark-card);
+      color: var(--text-light);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #43e97b;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+    }
+
+    .success-message.show {
+      transform: translateX(0);
+    }
+
+    /* Team Section */
+    .team-section {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+      border-radius: 30px;
+      padding: 4rem 2rem;
+      margin: 4rem 0;
+    }
+
+    .team-card {
+      background: var(--dark-card);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.4s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-1);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .team-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary-color);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    }
+
+    .team-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+      overflow: hidden;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .team-card:hover .team-image {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+    }
+
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .team-card:hover .team-image img {
+      transform: scale(1.1);
+    }
+
+    .team-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .team-role {
+      font-size: 1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .team-badge {
+      display: inline-block;
+      background: var(--gradient-1);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .team-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <div class="navbar-logo">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Aventro Logo">
+        </div>
+        <span>Aventro Tech Solutions</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: 1px solid var(--primary-color);">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Success Message -->
+  <div class="success-message" id="successMessage">
+    <i class="fas fa-check-circle me-2" style="color: #43e97b;"></i>
+    <span id="successText">Message sent successfully!</span>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+      <div class="hero-content">
+      <div class="hero-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Aventro Tech Solutions Logo">
+      </div>
+      <h3 style="color: #ffffff; font-size: 2rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 50px rgba(99, 102, 241, 0.6); animation: fadeInUp 1s ease 0.1s both;">Aventro Tech Solutions</h3>
+      <h1>Transforming Ideas into Intelligent Systems</h1>
+      <p class="subtitle">Innovation-Driven Technology Startup</p>
+      <p class="lead">
+        At Aventro Tech Solutions, we specialize in building intelligent, future-ready solutions using 
+        Artificial Intelligence, Agent-Based Systems, and modern software technologies. We transform 
+        ideas into impactful digital products by blending technical expertise, creativity, and real-world problem solving.
+      </p>
+      <div>
+        <a href="#contact" class="btn btn-hero btn-primary-custom">
+          <i class="fas fa-rocket me-2"></i>Get Started
+        </a>
+        <a href="#services" class="btn btn-hero btn-outline-custom">
+          <i class="fas fa-explore me-2"></i>Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>About Aventro Tech Solutions</h2>
+        <p>Driven by passion, powered by innovation, and guided by purpose</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              <strong>Aventro Tech Solutions</strong> is an innovation-driven technology startup focused on building 
+              intelligent, future-ready solutions using Artificial Intelligence, Agent-Based Systems, and modern 
+              software technologies. We specialize in transforming ideas into impactful digital products by blending 
+              technical expertise, creativity, and real-world problem solving.
+            </p>
+            <p>
+              At Aventro, we work at the intersection of AI, research, and application development, delivering 
+              industry-grade projects, academic solutions, and end-to-end IT services. With experience across client 
+              projects, research-oriented systems, and next-generation platforms, we help organizations and individuals 
+              move from concept to execution with confidence.
+            </p>
+            <div class="about-highlight" data-aos="fade-up" data-aos-delay="200">
+              <h5><i class="fas fa-lightbulb me-2"></i>Our Mission</h5>
+              <p class="mb-0">
+                Beyond technology, Aventro Tech Solutions is deeply committed to learning and growth. We actively 
+                support students, researchers, and early professionals through internships, bootcamps, workshops, and 
+                hands-on project development—bridging the gap between academic learning and industry expectations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-section" data-aos="fade-up" data-aos-delay="300">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number" data-target="50">0+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number" data-target="100">0+</div>
+              <div class="stat-label">Clients Served</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number" data-target="15">0+</div>
+              <div class="stat-label">AI Solutions</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number" data-target="24">0/7</div>
+              <div class="stat-label">Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team Section -->
+  <section class="section" id="team" style="background: var(--dark-bg);">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Meet Our Team</h2>
+        <p>Driving innovation with expertise, vision, and dedication</p>
+      </div>
+
+      <div class="team-section" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <!-- CEO - Founder -->
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{{ url_for('static', filename='images/CEO.jpeg') }}" alt="Chief Executive Officer">
+              </div>
+              <div class="team-name">MOHAMMED KAIF</div>
+              <div class="team-role">Chief Executive Officer</div>
+              <span class="team-badge">Founder</span>
+              <div class="team-description">
+                Our CEO provides strategic direction and visionary leadership to drive the company's long-term growth and innovation. With a strong focus on excellence, sustainability, and customer value, the CEO ensures that our organization remains future-ready while creating a positive impact on communities and stakeholders.
+              </div>
+            </div>
+          </div>
+
+          <!-- COO -->
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{{ url_for('static', filename='images/COO.jpeg') }}" alt="Chief Operating Officer">
+              </div>
+              <div class="team-name">GAYATHRI HARINI</div>
+              <div class="team-role">Chief Operating Officer</div>
+              <span class="team-badge">Founder</span>
+              <div class="team-description">
+                The COO oversees daily operations and ensures seamless execution across all departments. By optimizing processes, improving efficiency, and fostering collaboration, the COO plays a key role in translating strategy into measurable results and operational excellence.
+              </div>
+            </div>
+          </div>
+
+          <!-- MD - Co-founder -->
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{{ url_for('static', filename='images/MD.jpeg') }}" alt="Managing Director">
+              </div>
+              <div class="team-name">SARAH SAMRIN</div>
+              <div class="team-role">Managing Director</div>
+              <span class="team-badge">Co-founder</span>
+              <div class="team-description">
+                Our Managing Director is responsible for guiding the company's overall performance and business expansion. With deep industry expertise and strong leadership, the MD focuses on strengthening partnerships, driving growth opportunities, and ensuring consistent value delivery.
+              </div>
+            </div>
+          </div>
+
+          <!-- CTO - Founder & Technical Head -->
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{{ url_for('static', filename='images/CTO.jpeg') }}" alt="Chief Technology Officer">
+              </div>
+              <div class="team-name">MEHAK SULLTANA</div>
+              <div class="team-role">Chief Technology Officer</div>
+              <span class="team-badge">Technical Head</span>
+              <div class="team-description">
+                The CTO leads our technology vision and innovation strategy. By embracing cutting-edge technologies and scalable solutions, the CTO ensures secure, efficient, and future-focused digital systems that support business growth and enhance user experience.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section bg-light" id="services" style="background: var(--dark-bg);">
+    <div class="container">
+      <div class="section-title services" data-aos="fade-up">
+        <h2>Our Services</h2>
+        <p>Comprehensive AI solutions designed to transform your business</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="card-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h5>AI/ML Development</h5>
+            <p>Custom ML models, predictive analytics, computer vision, natural language processing, and deep learning solutions tailored to your business needs.</p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Custom ML Models</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Predictive Analytics</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Computer Vision</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="card-icon" style="background: var(--gradient-2);">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h5>Agent-Based Systems</h5>
+            <p>LLM Agents, Autonomous workflows, Multi-agent systems, and intelligent automation solutions that adapt and learn from interactions.</p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>LLM Agents</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Autonomous Workflows</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Multi-Agent Systems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card">
+            <div class="card-icon" style="background: var(--gradient-3);">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h5>Full-Stack AI Solutions</h5>
+            <p>End-to-end AI application development, API development, cloud deployment, and seamless integration with existing systems.</p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>API Development</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Cloud Deployment</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>System Integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-card">
+            <div class="card-icon" style="background: var(--gradient-4);">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h5>Data Analytics & Insights</h5>
+            <p>Transform raw data into actionable insights with advanced analytics, visualization, and business intelligence solutions.</p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Data Visualization</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Business Intelligence</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Real-time Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-card">
+            <div class="card-icon" style="background: var(--gradient-2);">
+              <i class="fas fa-code"></i>
+            </div>
+            <h5>Custom Software Development</h5>
+            <p>Bespoke software solutions built with modern technologies, scalable architectures, and industry best practices.</p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Web Applications</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Mobile Apps</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Enterprise Solutions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-card">
+            <div class="card-icon" style="background: var(--gradient-3);">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h5>Cloud & DevOps</h5>
+            <p>Scalable cloud infrastructure, CI/CD pipelines, containerization, and DevOps practices for seamless deployment and operations.</p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Cloud Migration</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>CI/CD Pipelines</li>
+              <li><i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>Infrastructure as Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Development Section -->
+  <section class="section" id="research">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Research & Development</h2>
+        <p>Supporting PhD Scholars and Research Communities</p>
+      </div>
+
+      <div class="research-section" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="mb-4" style="color: var(--text-light);">
+              <i class="fas fa-graduation-cap me-2" style="color: var(--primary-color);"></i>
+              Research Paper Assistance
+            </h3>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+              At Aventro Tech Solutions, we are committed to supporting PhD scholars, research students, and faculty 
+              researchers throughout their research journey. We provide end-to-end research paper assistance with 
+              quality, originality, and compliance with international research standards.
+            </p>
+
+            <div class="research-feature" data-aos="fade-right" data-aos-delay="200">
+              <div class="research-feature-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <div>
+                <h5 style="color: var(--text-light);">Topic Selection & Finalization</h5>
+                <p style="color: var(--text-muted);">Expert guidance in identifying and refining research topics aligned with current trends and academic requirements.</p>
+              </div>
+            </div>
+
+            <div class="research-feature" data-aos="fade-right" data-aos-delay="300">
+              <div class="research-feature-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div>
+                <h5 style="color: var(--text-light);">Research Paper Writing & Formatting</h5>
+                <p style="color: var(--text-muted);">Professional writing services with IEEE/Scopus formatting standards, ensuring compliance with publication guidelines.</p>
+              </div>
+            </div>
+
+            <div class="research-feature" data-aos="fade-right" data-aos-delay="400">
+              <div class="research-feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <h5 style="color: var(--text-light);">Plagiarism Checking & Improvement</h5>
+                <p style="color: var(--text-muted);">Comprehensive plagiarism detection and content improvement to ensure originality and quality.</p>
+              </div>
+            </div>
+
+            <div class="research-feature" data-aos="fade-right" data-aos-delay="500">
+              <div class="research-feature-icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <div>
+                <h5 style="color: var(--text-light);">Journal Selection & Submission Support</h5>
+                <p style="color: var(--text-muted);">Strategic guidance in selecting appropriate journals and assistance with submission processes for Scopus & IEEE publications.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="research-card">
+              <div class="card-icon">
+                <i class="fas fa-microscope"></i>
+              </div>
+              <h5>Why Choose Our Research Services?</h5>
+              <ul style="color: var(--text-muted); list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem;">
+                  <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                  <strong>Expert Team:</strong> Experienced researchers and academic writers
+                </li>
+                <li style="margin-bottom: 1rem;">
+                  <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                  <strong>Ethical Practices:</strong> Commitment to academic integrity and originality
+                </li>
+                <li style="margin-bottom: 1rem;">
+                  <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                  <strong>International Standards:</strong> Compliance with IEEE, Scopus, and other top-tier journal requirements
+                </li>
+                <li style="margin-bottom: 1rem;">
+                  <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                  <strong>End-to-End Support:</strong> From concept to publication
+                </li>
+                <li style="margin-bottom: 1rem;">
+                  <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                  <strong>Timely Delivery:</strong> Meeting deadlines without compromising quality
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-primary-custom mt-3" onclick="setResearchInquiry()">
+                <i class="fas fa-envelope me-2"></i>Get Research Support
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Programs Section -->
+  <section class="section bg-light" id="programs" style="background: var(--dark-bg);">
+    <div class="container">
+      <div class="section-title programs" data-aos="fade-up">
+        <h2>Training & Development Programs</h2>
+        <p>Bridging the gap between academic learning and industry expectations</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="program-card">
+            <div class="card-icon" style="background: var(--gradient-1);">
+              <i class="fas fa-code"></i>
+            </div>
+            <h5>Web & App Development using Generative AI</h5>
+            <p>
+              Master the future of web and mobile development with cutting-edge Generative AI technologies. 
+              Learn to build intelligent applications that leverage AI for enhanced user experiences, automated 
+              content generation, and smart development workflows.
+            </p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0; margin-bottom: 1.5rem;">
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Modern Web Development (React, Next.js, Vue.js)
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Mobile App Development (React Native, Flutter)
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Generative AI Integration (GPT, Claude, Gemini)
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                AI-Powered Development Tools & Workflows
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Real-world Project Development
+              </li>
+            </ul>
+            <a href="https://forms.gle/WyAjcnM3MhxDHh118" target="_blank" class="btn btn-primary-custom">
+              <i class="fas fa-rocket me-2"></i>Enroll Now
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="program-card">
+            <div class="card-icon" style="background: var(--gradient-3);">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h5>Data Analytics Internship</h5>
+            <p>
+              Gain hands-on experience in data analytics with our comprehensive internship program. Work on 
+              real-world projects, learn industry-standard tools, and develop skills that bridge the gap between 
+              academic learning and industry requirements.
+            </p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0; margin-bottom: 1.5rem;">
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Data Collection & Cleaning Techniques
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Statistical Analysis & Visualization
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Python, R, SQL, and Power BI
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Machine Learning for Analytics
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Industry Project Experience & Certification
+              </li>
+            </ul>
+            <a href="https://forms.gle/WyAjcnM3MhxDHh118" target="_blank" class="btn btn-primary-custom">
+              <i class="fas fa-rocket me-2"></i>Enroll Now
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="program-card">
+            <div class="card-icon" style="background: var(--gradient-2);">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h5>AI/ML Bootcamps</h5>
+            <p>
+              Intensive training programs designed to transform beginners into AI/ML professionals. Learn from 
+              industry experts and work on real-world projects that prepare you for the job market.
+            </p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0; margin-bottom: 1.5rem;">
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Fundamentals to Advanced ML Concepts
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Deep Learning & Neural Networks
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Hands-on Project Development
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Placement Support & Career Guidance
+              </li>
+            </ul>
+            <a href="https://forms.gle/WyAjcnM3MhxDHh118" target="_blank" class="btn btn-primary-custom">
+              <i class="fas fa-rocket me-2"></i>Enroll Now
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="program-card">
+            <div class="card-icon" style="background: var(--gradient-4);">
+              <i class="fas fa-users"></i>
+            </div>
+            <h5>Workshops & Skill Development</h5>
+            <p>
+              Short-term workshops and skill development sessions covering the latest technologies, tools, and 
+              industry best practices. Perfect for students and professionals looking to upskill.
+            </p>
+            <ul style="color: var(--text-muted); list-style: none; padding: 0; margin-bottom: 1.5rem;">
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Technology-Specific Workshops
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Industry Expert Sessions
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Hands-on Practice & Certificates
+              </li>
+              <li style="margin-bottom: 0.5rem;">
+                <i class="fas fa-check-circle me-2" style="color: var(--accent-color);"></i>
+                Networking Opportunities
+              </li>
+            </ul>
+            <a href="https://forms.gle/WyAjcnM3MhxDHh118" target="_blank" class="btn btn-primary-custom">
+              <i class="fas fa-rocket me-2"></i>Enroll Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Get In Touch</h2>
+        <p>Ready to transform your business with AI? Let's start a conversation</p>
+      </div>
+
+      <div class="contact-section" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="contact-reason" data-aos="fade-up" data-aos-delay="150">
+              <h5><i class="fas fa-info-circle me-2" style="color: var(--primary-color);"></i>Why Contact Us?</h5>
+              <p>
+                Whether you're looking for AI solutions, research support, training programs, or have a general inquiry, 
+                we're here to help. Fill out the form below and our team will get back to you within 24 hours.
+              </p>
+            </div>
+            <form method="POST" action="/contact" id="contactForm" class="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control form-control-custom" name="name" id="name" placeholder="Your Name *" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control form-control-custom" name="email" id="email" placeholder="Email Address *" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <select class="form-control form-control-custom" name="inquiry_type" id="inquiry_type" required>
+                    <option value="">Select Inquiry Type *</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Service Request">Service Request</option>
+                    <option value="Research Support">Research Support</option>
+                    <option value="Training Program">Training Program</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <select class="form-control form-control-custom" name="service_program" id="service_program">
+                    <option value="">Select Service/Program (Optional)</option>
+                    <optgroup label="Services">
+                      <option value="AI/ML Development">AI/ML Development</option>
+                      <option value="Agent-Based Systems">Agent-Based Systems</option>
+                      <option value="Full-Stack AI Solutions">Full-Stack AI Solutions</option>
+                      <option value="Data Analytics & Insights">Data Analytics & Insights</option>
+                      <option value="Custom Software Development">Custom Software Development</option>
+                      <option value="Cloud & DevOps">Cloud & DevOps</option>
+                    </optgroup>
+                    <optgroup label="Programs">
+                      <option value="Web & App Development (Generative AI)">Web & App Development (Generative AI)</option>
+                      <option value="Data Analytics Internship">Data Analytics Internship</option>
+                      <option value="AI/ML Bootcamps">AI/ML Bootcamps</option>
+                      <option value="Workshops & Skill Development">Workshops & Skill Development</option>
+                    </optgroup>
+                    <optgroup label="Research">
+                      <option value="Research Paper Assistance">Research Paper Assistance</option>
+                      <option value="Topic Selection">Topic Selection</option>
+                      <option value="Paper Writing & Formatting">Paper Writing & Formatting</option>
+                      <option value="Journal Submission Support">Journal Submission Support</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-custom" name="subject" id="subject" placeholder="Subject *" required>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control form-control-custom" name="message" id="message" rows="6" placeholder="Your Message *" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary-custom btn-hero" id="submitBtn">
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </form>
+
+            <div class="text-center mt-5">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <i class="fas fa-envelope fa-2x mb-3" style="color: var(--primary-color);"></i>
+                  <p style="color: var(--text-muted);">
+                    <a href="mailto:aventrotechsolutions@gmail.com" class="email-link">aventrotechsolutions@gmail.com</a>
+                  </p>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: var(--primary-color);"></i>
+                  <p style="color: var(--text-muted);">Chennai, Tamilnadu, India</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <i class="fas fa-globe fa-2x mb-3" style="color: var(--primary-color);"></i>
+                  <p style="color: var(--text-muted);">Remote - Worldwide</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5>
+              <i class="fas fa-brain me-2" style="color: var(--primary-color);"></i>
+              Aventro Tech Solutions
+            </h5>
+            <div class="footer-social-container">
+              <div class="footer-social-item">
+                <a href="https://www.linkedin.com/company/aventro-tech-solutions/" target="_blank" class="social-link linkedin" title="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+              <div class="footer-social-item">
+                <a href="https://x.com/AventroTech001" target="_blank" class="social-link twitter" title="Twitter / X">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 1.2em; height: 1.2em;">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="footer-social-item">
+                <a href="https://www.instagram.com/aventro_techsolutions.ltd?igsh=enhxN3VnbDh1cmJk" target="_blank" class="social-link instagram" title="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5>Quick Links</h5>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#team">Our Team</a>
+            <a href="#services">Services</a>
+            <a href="#research">Research</a>
+            <a href="#programs">Programs</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5>Services</h5>
+            <a href="#services">AI/ML Development</a>
+            <a href="#services">Agent-Based Systems</a>
+            <a href="#services">Full-Stack Solutions</a>
+            <a href="#services">Data Analytics</a>
+            <a href="#services">Custom Software</a>
+            <a href="#services">Cloud & DevOps</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5>Programs</h5>
+            <a href="#programs">Web & App Dev (AI)</a>
+            <a href="#programs">Data Analytics Internship</a>
+            <a href="#programs">AI/ML Bootcamps</a>
+            <a href="#programs">Workshops</a>
+            <a href="#research">Research Support</a>
+            <a href="#contact">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          <i class="far fa-copyright me-2"></i>
+          2026 Aventro Tech Solutions. All rights reserved.
+        </p>
+        <p class="mt-2" style="font-size: 0.9rem;">
+          <i class="fas fa-map-marker-alt me-2"></i>
+          Chennai, Tamilnadu, India | 
+          <i class="fas fa-envelope me-2 ms-3"></i>
+          aventrotechsolutions@gmail.com
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Hide loading overlay
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loadingOverlay').classList.add('hidden');
+      }, 500);
+    });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Card mouse tracking for enhanced hover effect
+    document.querySelectorAll('.service-card, .program-card, .research-card').forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        this.style.setProperty('--mouse-x', x + '%');
+        this.style.setProperty('--mouse-y', y + '%');
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Create particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Animated Counter
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          if (element.getAttribute('data-target') === '24') {
+            element.textContent = Math.floor(current) + '/7';
+          } else {
+            element.textContent = Math.floor(current) + '+';
+          }
+          requestAnimationFrame(updateCounter);
+        } else {
+          if (element.getAttribute('data-target') === '24') {
+            element.textContent = target + '/7';
+          } else {
+            element.textContent = target + '+';
+          }
+        }
+      };
+
+      updateCounter();
+    }
+
+    // Observe stats section for counter animation
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.stat-number[data-target]');
+          counters.forEach(counter => {
+            if (!counter.classList.contains('animated')) {
+              counter.classList.add('animated');
+              animateCounter(counter);
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+
+    // Set Research Inquiry
+    function setResearchInquiry() {
+      setTimeout(() => {
+        const inquiryType = document.getElementById('inquiry_type');
+        const serviceProgram = document.getElementById('service_program');
+        if (inquiryType) {
+          inquiryType.value = 'Research Support';
+        }
+        if (serviceProgram) {
+          serviceProgram.value = 'Research Paper Assistance';
+        }
+        // Scroll to contact form
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
+
+    // Show Success Message
+    function showSuccessMessage(message) {
+      const successMsg = document.getElementById('successMessage');
+      const successText = document.getElementById('successText');
+      successText.textContent = message;
+      successMsg.classList.add('show');
+      setTimeout(() => {
+        successMsg.classList.remove('show');
+      }, 5000);
+    }
+
+    // Form submission with better handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+        
+        const formData = new FormData(this);
+        
+        fetch('/contact', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            showSuccessMessage(data.message);
+            this.reset();
+          } else {
+            alert('✗ ' + data.message);
+          }
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        })
+        .catch(error => {
+          showSuccessMessage('Thank you for your message! We will contact you soon.');
+          this.reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
